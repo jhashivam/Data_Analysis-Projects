@@ -1,52 +1,24 @@
 #  NETFLIX Exploration Data Analysis & Visualization
 
-Netflix is one of the most popular media and video streaming platforms. They have over 10000 movies or tv shows available on their platform, as of mid-2021, they have over 222M Subscribers globally. This tabular dataset consists of listings of all the movies and tv shows available on Netflix, along with details such as - cast, directors, ratings, release year, duration, etc.
+### Based on our analysis:
 
-## Business Problem
-
-Analyze the data and generate insights that could help Netflix ijn deciding which type of shows/movies to produce and how they can grow the business in different countries
-
-
-The dataset provided to you consists of a list of all the TV shows/movies available on Netflix:
-
-**  Show_id: Unique ID for every Movie / Tv Show
-    Type: Identifier - A Movie or TV Show
-    Title: Title of the Movie / Tv Show
-    Director: Director of the Movie
-    Cast: Actors involved in the movie/show
-    Country: Country where the movie/show was produced
-    Date_added: Date it was added on Netflix
-    Release_year: Actual Release year of the movie/show
-    Rating: TV Rating of the movie/show
-    Duration: Total Duration - in minutes or number of seasons
-    Listed_in: Genre
-    Description: The summary description**
-
-## Data and Notebook for Analysis:
-
-1. Data used for analysis - netflix.csv
-2. Colab notebook - Netflix_Data_Analysis.ipynb
-
-
-Data Visualization :
-
-1. we will import relevant libraries to load and explore the dataset. 
-    - For this, we imported  numpy, pandas for numerical computations and analysis and matplotlib, seaborn for visualization.
-    - The dataset provided to us consists of a list of all the TV shows/movies available on Netflix
-2. We will check how many entries in our dataset are null/blank and then accordingly clean our dataset as these are the initial steps of our data preprocessing. therefor we plot a heatmap of the null values to visualize what all records are null.
-3. dataset is clean except for ‘director’, ‘cast’ and ‘country’ columns. 
-4. Since we need to provide insights aiming to findout the business in different countries, we have to impute the values in ‘country’ column. We will choose to drop the other two columns as they have a lot of missing values. Now let’s explore the distribution of number of TV Shows and Movies present in Netflix.
-5. We can visually conclude that our distribution is skewed relative to the type of content present on the platform and the data is unequal for both the categories of content we want to provide insights for. To avoid any bias in our analysis and results, we will divide the data into two categories based on their type (i.e.TV Show and Movie) and proceed further keeping our methodology same for both the categories and deducing possible measures to achieve our aim for each category.
-6. data contains a variety of genres as mentioned in the ‘Listed_in’ column. we will pick the top 10 genres for the content provided in the data and drill deeper into them to get insights enabling us to filter out the genres our users are interested in. We will therefore plot a graph to find out what are the top genres of the content present in Netflix.
-
-Data Pre-processing: 
-
-1. We will split our data into two categories on the basis of their type (i.e TV Show or Movie). Also we drop the columns for director and cast from the data.
-2. Next step is to impute the empty values in our data for 'country'. 
-3. Since we cannot drop this column as our aim is to increase the business in different countries. we will proceed with forward filling of imputation. In upcoming revisions, we will train a model to predict the null values for country using the filled records as our training sample and predicting the values for our empty records.
-4. We will also now proceed with imputing other missing values in the records of the data. Part-1 of the data (i.e. with type as Movie) contains two records where the ratings are null. 
-5. Therea are more records with empty values in the date_added column were present but we will drop these records as they are not relevant for our analysis much.
-6. Filtered top 10 countries with maximum content produced
-7. filtered top 10 genres with maximum content produced
-8. Filtered for the data for top 10 countries (United States', 'Japan', 'Nigeria', 'France', 'United Kingdom','India', 'Mexico', 'Egypt', 'Canada', 'Spain')
-
+1. Netflix can produce movies compared to shows as the number of movies is more on Netflix than the number of shows.
+2. Most of the content on Netflix is of Adult rating and there is an increase in the percentage of Adult rating content and kid's content also in the past 10 years as compared to the previous time. So, it is recommended to make similar contents i.e,  more contents for Adults and Kids.
+3. The top 5 countries producing movies are - the United States, India, the United Kingdom, Canada, and France. 
+Simpilarly the top 5 countries producing tv shows are - United States United Kingdom, South Korea, Japan and Canada.
+4. It is recommended to  add any new movie in January, December, and October compared to other months. (due to many occasions like Christmas, New year, etc) as the number of movies added in these 3 months are highest and lowest in February and May.
+Similarly,  for tv shows it is recommended to add tv shows in December as compared to other months as the number of tv shows added in December is highest and lowest in February.
+5. Based on our analysis, it is recommended to keep the movie's duration to 100 minutes as most of the movies present on Netflix are of that much duration only.
+Similarly, for tv shows it is recommended to keep the shows up to 2 seasons to keep the Story short as well, as engaging.
+6. It is recommended to create or produce more movies in Drama, International Movies, Documentaries and some sort of Comedy as there is quite a demand in these genres as based on our genres analysis the number of movies in these genres is increasing in past 30 years. (But based on the countrywide production there might be slight changes which we have already included in our analysis).
+Similarly, for tv shows, it is recommended to create or produce more tv shows in Drama, International TV Shows, Docuseries, Crime TV Shows, and some sort of Comedy as there is quite a demand in these genres as the number of shows in these genres are increasing in past 30 years.
+7. It is recommended to include the top directors from their respective countries while creating any movies on Netflix. For example the top directors in the USA: Jay Karas Marcus Raboy, Jay Chapman, etc as the number of movies directed by these directors are highest from the United States that are present on Netflix.
+We can recommend the same for tv shows also based on our analysis (Refer to "For TV Shows" in "Director analysis from top countries" section in the notebook for better clarity)
+8. For creating any content especially in India, we can include top directors based on the genres of movies they have directed.
+For example: For creating movies in the comedy genre, we can include David Dhawan, Anees Bamee, Farah Khan, etc as directors because these are some of the top directors from India who has directed many movies in the Comedy genre. Similarly, for the Drama genre, we can include Anurag Kashyap, Dibakar Banerjee, etc as a director because these are some of the top directors from India who has directed many movies in the Drama genre
+We can recommend the same for tv shows also based on our analysis Refer to "In India" in "Director analysis from top countries" section in the notebook for better clarity)
+9. It is recommended to cast the top actors from their respective countries while creating any movies on Netflix. For example: while producing movies in the United States, Samuel L Jackson, Adam Sandler, James Franco, Nicolas Cage are some of the top actors who can be casted as the number of movies done by them are highest in United States.
+We can recommend the same for tv shows also based on our analysis (Refer to "For TV Shows" in "Cast analysis from top countries" section in the notebook for better clarity).
+10. For creating any content, especially in India, we can include top casts based on the genres of movies they have made.
+For example: For creating movies in the comedy genre, we can cast Anupam Kher, Paresh Rawal, Akshay Kumar, etc because these are some of the top casts from India which has done many movies in the Comedy genre. Similarly, for Independent movies, we can cast Naseeruddin Shah, Rajit Kapoor, Adil Hussain, etc because these are some of the top casts from India which has done many movies in the same genre.
+We can recommend the same for tv shows also based on our analysis Refer to "In India" in "Cast analysis from top countries" section in the notebook for better clarity)
